@@ -1,20 +1,16 @@
+import 'package:donation_app/models/issue_model.dart';
+import 'package:donation_app/screens/detail.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class Issue extends StatelessWidget {
-  final title;
-  final amount;
-  final daysLeft;
-  final imageUrl;
+class SingleIssue extends StatelessWidget {
+  final Issue issue;
 
-  Issue(
-      {required this.title,
-      required this.amount,
-      required this.daysLeft,
-      required this.imageUrl});
+  SingleIssue({required this.issue});
 
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
+      margin: EdgeInsets.symmetric(vertical: 10),
       height: 320,
       decoration: BoxDecoration(
           color: Colors.grey[100], borderRadius: BorderRadius.circular(10)),
@@ -22,17 +18,25 @@ class Issue extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-              height: 180,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                      fit: BoxFit.cover, image: NetworkImage(imageUrl)))),
+          InkWell(
+            onTap: () {
+              Get.to(() => DetailPage(
+                    issue: issue,
+                  ));
+            },
+            child: Container(
+                height: 180,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(issue.imageUrl)))),
+          ),
           SizedBox(
             height: 15,
           ),
           Text(
-            title,
+            issue.title,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           SizedBox(
@@ -49,14 +53,14 @@ class Issue extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "\$$amount",
+                "\$${issue.amount}",
                 style: TextStyle(
                     color: Color(0xFF5fc9c8),
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
               Text(
-                "$daysLeft Days left",
+                "${issue.daysLeft} Days left",
                 style: TextStyle(color: Colors.grey[400]),
               )
             ],

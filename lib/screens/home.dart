@@ -1,10 +1,13 @@
-import 'package:donation_app/widgets/category.dart';
-import 'package:donation_app/widgets/issue.dart';
-import 'package:donation_app/widgets/main.dart';
-import 'package:donation_app/widgets/topbar.dart';
+import 'package:donation_app/controller/donation_controller.dart';
+import 'package:donation_app/widgets/home/category.dart';
+import 'package:donation_app/widgets/home/issue.dart';
+import 'package:donation_app/widgets/home/main.dart';
+import 'package:donation_app/widgets/home/topbar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
+  final DonationController controller = Get.put(DonationController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,20 +31,20 @@ class Home extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 CategoryList(),
-                Issue(
-                  daysLeft: 9,
-                  amount: 12.765,
-                  title: "Clean water for refugess camp",
-                  imageUrl:
-                      "https://cdn.pixabay.com/photo/2019/01/16/14/16/people-3935983__340.jpg",
-                ),
-                Issue(
-                  amount: 17.786,
-                  daysLeft: 12,
-                  imageUrl:
-                      "https://cdn.pixabay.com/photo/2018/02/07/18/30/people-3137670__340.jpg",
-                  title: "Help refugee get better education",
-                ),
+                Obx(() {
+                  return Column(
+                    children: [
+                      ...controller.issues
+                          .map((e) => SingleIssue(
+                                issue: e,
+                              ))
+                          .toList(),
+                      SizedBox(
+                        height: 10,
+                      )
+                    ],
+                  );
+                })
               ],
             ),
           ),
