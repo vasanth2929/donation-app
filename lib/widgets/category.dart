@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class Category extends StatelessWidget {
   final String title;
   final IconData icon;
-  Category({required this.title, required this.icon});
+  final Color color ;
+  Category({required this.title, required this.icon,required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +19,7 @@ class Category extends StatelessWidget {
           Icon(
             icon,
             size: 18,
+            color: color,
           ),
           SizedBox(
             width: 5,

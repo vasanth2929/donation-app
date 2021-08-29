@@ -92,18 +92,22 @@ class Home extends StatelessWidget {
                   Category(
                     icon: Icons.favorite_border_outlined,
                     title: "Humanity",
+                    color: Colors.orange.withOpacity(0.8),
                   ),
                   Category(
-                    icon: Icons.health_and_safety_outlined,
+                    icon: Icons.healing_outlined,
                     title: "Health",
+                    color: Colors.green.withOpacity(0.5),
                   ),
                   Category(
                     icon: Icons.book,
                     title: "Education",
+                    color: Colors.green.withOpacity(.9),
                   ),
                   Category(
                     icon: Icons.travel_explore,
                     title: "Environment",
+                    color: Colors.greenAccent,
                   ),
                 ],
               ),
