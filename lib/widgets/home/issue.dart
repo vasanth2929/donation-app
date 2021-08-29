@@ -36,6 +36,7 @@ class SingleIssue extends StatelessWidget {
           ),
           Text(
             issue.title,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           SizedBox(
