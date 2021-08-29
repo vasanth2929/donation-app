@@ -1,3 +1,4 @@
+import 'package:donation_app/widgets/category.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -22,7 +23,7 @@ class Home extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
-                      "Jancy",
+                      "Maddy",
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     )
@@ -88,85 +89,21 @@ class Home extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  Container(
-                    height: 0,
-                    margin: EdgeInsets.only(top: 10, right: 20),
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[100],
-                        borderRadius: BorderRadius.circular(4)),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.favorite_border_outlined,
-                          size: 18,
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text("Humanity")
-                      ],
-                    ),
+                  Category(
+                    icon: Icons.favorite_border_outlined,
+                    title: "Humanity",
                   ),
-                  Container(
-                    height: 0,
-                    margin: EdgeInsets.only(top: 10, right: 20),
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[100],
-                        borderRadius: BorderRadius.circular(4)),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.health_and_safety_outlined,
-                          size: 18,
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text("Health")
-                      ],
-                    ),
+                  Category(
+                    icon: Icons.health_and_safety_outlined,
+                    title: "Health",
                   ),
-                  Container(
-                    height: 0,
-                    margin: EdgeInsets.only(top: 10, right: 20),
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[100],
-                        borderRadius: BorderRadius.circular(4)),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.book,
-                          size: 18,
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text("Education")
-                      ],
-                    ),
+                  Category(
+                    icon: Icons.book,
+                    title: "Education",
                   ),
-                  Container(
-                    height: 0,
-                    margin: EdgeInsets.only(top: 10, right: 20),
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[100],
-                        borderRadius: BorderRadius.circular(4)),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.travel_explore,
-                          size: 18,
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text("Environment")
-                      ],
-                    ),
+                  Category(
+                    icon: Icons.travel_explore,
+                    title: "Environment",
                   ),
                 ],
               ),
