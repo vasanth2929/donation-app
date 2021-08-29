@@ -29,8 +29,7 @@ class SingleIssue extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(issue.imageUrl)))),
+                        fit: BoxFit.cover, image: AssetImage(issue.imageUrl)))),
           ),
           SizedBox(
             height: 15,
