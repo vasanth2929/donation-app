@@ -32,6 +32,31 @@ class IssueDetail extends StatelessWidget {
                       color: Colors.black.withOpacity(0.6),
                       borderRadius: BorderRadius.circular(10)),
                   height: 200,
+                )),
+            Positioned(
+                top: 20,
+                left: 20,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(5)),
+                  padding:
+                      EdgeInsets.only(left: 10, right: 15, top: 10, bottom: 10),
+                  child: Row(
+                    children: [
+                      Icon(
+                        issue.categoryIcon,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        issue.category,
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
                 ))
           ],
         ),
