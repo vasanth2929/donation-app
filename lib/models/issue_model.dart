@@ -8,9 +8,11 @@ class Issue {
   final id;
   final category;
   final IconData categoryIcon;
+  final totalAmaount ;
 
   Issue(
       {required this.title,
+      required this.totalAmaount,
       required this.id,
       required this.category,
       required this.amount,

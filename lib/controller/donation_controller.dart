@@ -9,7 +9,8 @@ class DonationController extends GetxController {
     Issue(
         id: "1",
         daysLeft: 9,
-        amount: 12.765,
+        totalAmaount: 12.765,
+        amount: 12.0,
         title: "Clean water for refugess camp",
         category: 'Humanity',
         categoryIcon: Icons.favorite_border_outlined,
@@ -18,6 +19,7 @@ class DonationController extends GetxController {
       id: "2",
       amount: 17.786,
       daysLeft: 12,
+      totalAmaount: 50.65,
       categoryIcon: Icons.book,
       imageUrl: "assets/images/education.webp",
       title: "Help refugee get better education",
@@ -25,6 +27,7 @@ class DonationController extends GetxController {
     ),
     Issue(
         id: "3",
+        totalAmaount: 500,
         categoryIcon: Icons.travel_explore,
         daysLeft: 9,
         amount: 202.765,
@@ -34,6 +37,7 @@ class DonationController extends GetxController {
     Issue(
       id: "4",
       amount: 17.786,
+      totalAmaount: 41,
       categoryIcon: Icons.healing_outlined,
       daysLeft: 12,
       category: 'Health',
