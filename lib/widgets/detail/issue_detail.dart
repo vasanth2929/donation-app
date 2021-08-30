@@ -139,6 +139,91 @@ class IssueDetail extends StatelessWidget {
               )
             ],
           ),
+        ),
+        SizedBox(
+          height: 30,
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 5, bottom: 20),
+          child: Text(
+            "Campaign by",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(20),
+          decoration: BoxDecoration(
+              color: Colors.grey[100], borderRadius: BorderRadius.circular(20)),
+          height: 150,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                height: 60,
+                width: 60,
+                decoration: BoxDecoration(
+                    color: Color(0xFF5fc9c8),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Center(
+                  child: Icon(
+                    Icons.campaign_outlined,
+                    size: 35,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Abhas Khan",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Verified user",
+                    style: TextStyle(
+                        color: Color(0xFF5fc9c8), fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+              Expanded(child: Container()),
+              Icon(
+                Icons.verified_user,
+                size: 25,
+                color: Color(0xFF5fc9c8),
+              )
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 30,
+        ),
+        InkWell(
+          onTap: () {
+            print("hello");
+          },
+          child: Container(
+            height: 50,
+            decoration: BoxDecoration(
+                color: Color(0xFF5fc9c8),
+                borderRadius: BorderRadius.circular(10)),
+            child: Center(
+              child: Text(
+                "Donate",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
         )
       ],
     );
