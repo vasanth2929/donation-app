@@ -1,21 +1,38 @@
 import 'package:flutter/material.dart';
 
-class Main extends StatelessWidget {
+
+class Main extends StatefulWidget {
+  @override
+  _MainState createState() => _MainState();
+}
+
+class _MainState extends State<Main> {
+  Tween<double> t = Tween(begin: 0, end: 1);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Row(
         children: [
-          Container(
-            width: 35,
-            height: 35,
-            child: Icon(
-              Icons.favorite_rounded,
-              color: Color(0xFFe88293),
-            ),
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(5)),
-          ),
+          TweenAnimationBuilder(
+              tween: t,
+              duration: Duration(milliseconds: 1200),
+              builder: (BuildContext ctx, double value, child) {
+                return Opacity(
+                  opacity: value,
+                  child: Container(
+                    width: 35,
+                    height: 35,
+                    child: Icon(
+                      Icons.favorite_rounded,
+                      color: Color(0xFFe88293),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5)),
+                  ),
+                );
+              }),
           SizedBox(
             width: 20,
           ),
