@@ -1,5 +1,7 @@
 import 'package:donation_app/models/issue_model.dart';
+import 'package:donation_app/screens/payment.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class IssueDetail extends StatelessWidget {
   final Issue issue;
@@ -223,7 +225,7 @@ class IssueDetail extends StatelessWidget {
         ),
         InkWell(
           onTap: () {
-            print("hello");
+            Get.to(()=>Payment());
           },
           child: Container(
             height: 50,
