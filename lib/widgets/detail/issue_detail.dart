@@ -116,13 +116,21 @@ class IssueDetail extends StatelessWidget {
                         ),
                         Positioned(child: LayoutBuilder(
                           builder: (b, c) {
-                            return Container(
-                              height: 10,
-                              width: c.maxWidth * getPercent() / 100,
-                              decoration: BoxDecoration(
-                                  color: Color(0xFF5fc9c8),
-                                  borderRadius: BorderRadius.circular(10)),
-                            );
+                            return TweenAnimationBuilder(
+                                tween: Tween<double>(
+                                    begin: 0,
+                                    end: c.maxWidth * getPercent() / 100),
+                                duration: Duration(milliseconds: 800),
+                                builder: (BuildContext ctx, double value, _) {
+                                  return Container(
+                                    height: 10,
+                                    width: value,
+                                    decoration: BoxDecoration(
+                                        color: Color(0xFF5fc9c8),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  );
+                                });
                           },
                         ))
                       ],
@@ -131,10 +139,18 @@ class IssueDetail extends StatelessWidget {
                   SizedBox(
                     width: 25,
                   ),
-                  Text("${getPercent()} %",
-                      style: TextStyle(
-                          color: Color(0xFF5fc9c8),
-                          fontWeight: FontWeight.bold))
+                  TweenAnimationBuilder(
+                      tween: Tween<double>(begin: 0, end: 1),
+                      duration: Duration(milliseconds: 800),
+                      builder: (ctx, double v, _) {
+                        return Opacity(
+                          opacity: v,
+                          child: Text("${getPercent()} %",
+                              style: TextStyle(
+                                  color: Color(0xFF5fc9c8),
+                                  fontWeight: FontWeight.bold)),
+                        );
+                      })
                 ],
               )
             ],
