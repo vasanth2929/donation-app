@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Topbar extends StatelessWidget {
+  final String title;
+  final bool showMore;
+
+  Topbar({required this.title,required this.showMore});
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -13,10 +17,10 @@ class Topbar extends StatelessWidget {
             },
             child: Icon(Icons.arrow_back)),
         Text(
-          "Detail",
+          title,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
-        Icon(Icons.more_vert)
+       showMore ? Icon(Icons.more_vert) : Container()
       ],
     );
   }

@@ -15,7 +15,7 @@ class DetailPage extends StatelessWidget {
             padding: EdgeInsets.all(20),
             child: Column(
               children: [
-                Topbar(),
+                Topbar(title: "Detail",showMore: true,),
                 SizedBox(
                   height: 25,
                 ),

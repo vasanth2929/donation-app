@@ -1,5 +1,6 @@
 import 'package:donation_app/models/issue_model.dart';
 import 'package:donation_app/screens/payment.dart';
+import 'package:donation_app/widgets/common/util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -223,25 +224,11 @@ class IssueDetail extends StatelessWidget {
         SizedBox(
           height: 30,
         ),
-        InkWell(
+        Btn(
+          title: "Donate",
           onTap: () {
-            Get.to(()=>Payment());
+            Get.to(() => Payment());
           },
-          child: Container(
-            height: 50,
-            decoration: BoxDecoration(
-                color: Color(0xFF5fc9c8),
-                borderRadius: BorderRadius.circular(10)),
-            child: Center(
-              child: Text(
-                "Donate",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
         )
       ],
     );
